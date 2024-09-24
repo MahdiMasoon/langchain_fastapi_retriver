@@ -1,18 +1,20 @@
-import time
-import uuid
-import sys
-from app.schemas import Retrieved
 import logging
+import sys
+import uuid
+
 from langchain_community.retrievers import TFIDFRetriever
+
+from app.schemas import Retrieved
 
 logging.getLogger().addHandler(logging.StreamHandler(sys.stdout))
 
 requests = {}
 
-retriever = TFIDFRetriever.load_local("retriever.pkl", allow_dangerous_deserialization= True)
+retriever = TFIDFRetriever.load_local("retriever.pkl", allow_dangerous_deserialization=True)
+
 
 def retrieve_chain(
-    id: uuid.UUID, query: str
+        id: uuid.UUID, query: str
 ):
     logging.info(f'Hi {id}, your query is {query}!!!')
     requests[id] = Retrieved(id=id, completed=False, texts=[])

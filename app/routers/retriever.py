@@ -38,8 +38,7 @@ async def retrieve_text(
     },
 )
 async def get_texts(r: Request, id: uuid.UUID):
-
     if id in requests:
         req = requests[id]
-        return Retrieved(id=req.id, completed= req.completed, texts=req.texts)
+        return Retrieved(id=req.id, completed=req.completed, texts=req.texts)
     raise HTTPException(status_code=404, detail="ID not found")

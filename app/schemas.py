@@ -1,6 +1,6 @@
-from pydantic import BaseModel, Field
-from typing import List
 import uuid
+
+from pydantic import BaseModel, Field
 
 
 class RetrieveRequest(BaseModel):
