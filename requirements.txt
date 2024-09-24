@@ -1,3 +1,7 @@
 fastapi[standard]
 langchain_community
+langchain_chroma
+langchain_huggingface
 pydantic
+selenium
+markdownify
